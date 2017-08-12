@@ -1,0 +1,18 @@
+<article>
+    <h1>{{ entry.title }}</h1>
+    {{ entry.content }}
+    <div class="tags">
+        {% if 'tag' in env.views and entry.tags %}
+            tagged as
+                {% for link in entry.tags | tagify -%}
+                    <a href="{{ env.path + link.href }}" rel="tag">{{ link.title }}</a>
+                    {%- if loop.revindex > 2 -%}
+                    ,
+                    {%- elif loop.revindex == 2 %}
+                    and
+                    {% endif %}
+                {% endfor %}
+        {% elif not entry.draft %}
+        {% endif %}
+    </div>
+</article>

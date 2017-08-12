@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ravi.rao.li/b//rss.xml</loc>
+    <lastmod>2017-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ravi.rao.li/b//atom.xml</loc>
+    <lastmod>2017-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ravi.rao.li/b//credits/</loc>
+    <lastmod>2017-08-12</lastmod>
+    <changefreq>never</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ravi.rao.li/b//</loc>
+    <lastmod>2017-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ravi.rao.li/b//articles/</loc>
+    <lastmod>2017-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+</urlset>

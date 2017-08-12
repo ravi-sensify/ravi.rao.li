@@ -1,0 +1,29 @@
+
+
+<div class="util-links">
+    <a href="../">home</a>
+    <a href="https://twitter.com/zaatar" rel="me">@zaatar</a>
+    <a href="https://github.com/ravi-sensify" rel="me">github</a>
+    <a href="/b/atom.xml" rel="alternate">blog feed</a>
+</div>
+<div id="entries-search">
+    <input class="search-box" type="search" placeholder="Filter&hellip;" />
+    <ul class="entry-list">
+    
+        <li>
+            <span class="date">2017 August 11</span>
+            &mdash;
+            <a class="title" href="/b/credits/">Credits</a>
+        </li>
+    
+    </ul>
+</div>
+<script>
+    window.addEventListener("load", function() {
+        new List('entries-search', { 
+            valueNames: ['title'],
+            searchClass: 'search-box',
+            listClass: 'entry-list'
+        });
+    }, false);
+</script>

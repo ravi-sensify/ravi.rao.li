@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {%- if entry is defined -%}
+      {{ entry.title }}
+    {%- else -%}
+      {{ conf.sitename }}
+    {%- endif -%}
+{% endblock %}
+
+{% block head %}
+    {{- super() }}
+    {%- if entry is defined %}
+    <meta name="description" content="{{ entry.description | e }}" />
+    <meta name="keywords" content="{{ entry.tags | join(', ') }}" />
+    {%- endif -%}
+{% endblock %}
+
+{% block content %}
+    {%- if env.route == "/" %}
+        {% include 'articles.html' %}
+    {%- elif env.route.startswith("/tag/") %}
+        {% for entry in env.entrylist %}
+            {% include 'entry.html' %}
+        {% endfor %}
+    {%- else %}
+        {% set entry = env.entrylist|first %}
+        {% include 'entry.html' %}
+    {%- endif -%}
+    {#
+    {% if (env.prev is not none) or (env.next is not none) %}
+        <div class="pager">
+        {% if env.prev is not none %}
+            <a href="{{ env.path ~ env.prev }}" class="prev">
+            {{ env.prev.title }} &#x21DD;
+            </a>
+        {% endif %}
+        {% if env.next is not none %}
+            <a href="{{ env.path ~ env.next }}" class="next">
+            &#x21DC; {{ env.next.title }}
+            </a>
+        {%- endif  %}
+        </div>
+    {%- endif  %}
+    #}
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+{% endblock %}
